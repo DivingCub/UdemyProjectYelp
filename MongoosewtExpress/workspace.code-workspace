@@ -1,0 +1,20 @@
+{
+	"folders": [
+		{
+			"path": "../../../WebCamp"
+		},
+		{
+			"path": "../ExpressProject/FirstApp"
+		},
+		{
+			"path": "../RestProject"
+		},
+		{
+			"path": "../MongooseInitial"
+		},
+		{
+			"path": "."
+		}
+	],
+	"settings": {}
+}

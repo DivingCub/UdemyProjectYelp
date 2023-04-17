@@ -1,0 +1,108 @@
+
+    <% layout('/campgrounds/layouts/boilerplate')%>
+    <!-- 制定好以哪里的模板进行参考，并且最终执行完毕 -->
+
+    <div class="row">
+        <h1 class="text-center">Create New Campground</h1>
+        <div class="col-6 offset-3">
+            <!-- 一共12个但愿，想让内容在中间，但是两边又保持一定的宽间距，就这样去设定 -->
+            <form action="/campgrounds" method="post" novalidate class="validation-form">
+                <div class="mb-3">
+                    <label class="form-label" for="title">Title</label>
+                    <input class="form-control" type="text" id="title" name="campground[title]" required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+        
+                <div class="mb-3">
+                    <label class="form-label" for="location">Location</label>
+                    <input class="form-control" type="text" id="location" name="campground[location]" required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label" for="image">imageUrl</label>
+                    <input class="form-control" type="text" id="image" name="campground[image]" required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                     <label class="form-label" for="price">Campground Price</label>
+                    <div class="input-group">
+                        <span class="input-group-text" id="price-label">$</span>
+                        <input type="text" class="form-control" id="price" placeholder="0.00" aria-label="price" aria-describedby="price-label" name="campground[price]"> 
+                    </div> 
+                </div>
+
+                
+        
+
+
+                <div class="mb-3">
+                    <label class="form-label" for="description">Description</label>
+                    <textarea class="form-control" type="text" id="description" name="campground[description]"></textarea>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+            
+                
+                <div class="mb-3"><button class="btn btn-warning">Add Campground</button></div>       
+                
+
+                <div>
+                    <a href="/campgrounds">Back to main page</a>
+                </div>
+            </form> 
+        </div>
+    </div>
+
+
+    <script>
+        // Example starter JavaScript for disabling form submissions if there are invalid fields
+        (function() {
+          'use strict';
+          window.addEventListener('load', function() {
+            // Fetch all the forms we want to apply custom Bootstrap validation styles to
+            const forms = document.getElementsByClassName('validation-form');
+            // Loop over them and prevent submission
+            var validation = Array.prototype.filter.call(forms, function(form) {
+              form.addEventListener('submit', function(event) {
+                if (form.checkValidity() === false) {
+                  event.preventDefault();
+                  event.stopPropagation();
+                }
+                form.classList.add('was-validated');
+              }, false);
+            });
+          }, false);
+        })();
+        </script>
+
+
+
+
+
+
+
+    <!-- <h1>Create Campground</h1>
+    <form action="/campgrounds" method="post">
+        <div>
+            <label for="title">Title</label>
+            <input type="text" id="title" name="campground[title]">
+        </div>
+
+        <div>
+            <label for="location">Location</label>
+            <input type="text" id="location" name="campground[location]">
+        </div>
+        <button>Add Campground</button>
+        <div>
+            <a href="/campgrounds">Back to main page</a>
+        </div>
+    </form> -->
